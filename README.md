@@ -41,6 +41,10 @@ Give grader the permission to sudo
 
 `gpasswd -a grader sudo`
 
+`vi /etc/ssh/sshd_config` Change PermitRootLogin from yes to no
+
+`service ssh restart`
+
 Create an SSH key pair for grader using the ssh-keygen tool
 
 `ssh-keygen`
@@ -154,3 +158,10 @@ Insert the following cade:
     CustomLog ${APACHE_LOG_DIR}/access.log combined
 </VirtualHost>
 ```
+Make necessary changes in clientsecres.json file
+
+Make necessary changes to python files
+
+engine = create_engine('postgresql://catalog:password@localhost/catalog')
+
+`sudo service apache2 restart`
