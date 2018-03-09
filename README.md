@@ -65,7 +65,7 @@ Install and configure Apache to serve a Python mod_wsgi application
 
 `sudo service apache2 start`
 
- Install and configure PostgreSQL   ` `
+ Install and configure PostgreSQL   
  
  `sudo apt-get install libpq-dev python-dev`
  
