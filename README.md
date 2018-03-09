@@ -91,7 +91,7 @@ Install git
 
 `sudo apt-get install git`
 
-Deploy the Item Catalog project.
+# Deploy the Item Catalog project.
 
 `cd /var/www`
 
@@ -99,22 +99,58 @@ Deploy the Item Catalog project.
 
 `cd /FlaskApp`
 
-`git clone `
+`git clone https://github.com/shristi11/Catalog-Application FlaskApp `
 
-` `
+`sudo nano flaskapp.wsgi` Insert the following pythone code.
 
-` `
+```python
+#!/usr/bin/python
+import sys
+import logging
+logging.basicConfig(stream=sys.stderr)
+sys.path.insert(0, "/var/www/FlaskApp/")
 
-` `
+from FlaskApp import app as application
+```
+Install virtual environment, Flask and the project's dependencies
 
-` `
+`sudo apt-get install python-pip`
 
-` `
+`sudo pip install virtualenv`
 
-` `
+`sudo virtualenv venv`
 
-` `
+`source venv/bin/activate`
 
-` `
+`sudo chmod -R 777 venv`
 
-` `
+`pip install Flask`
+
+`pip install httplib2 request oauth2client sqlalchemy python-psycopg2`
+
+`sudo nano /etc/apache2/sites-available/FlaskApp.conf`
+
+Insert the following cade:
+
+```
+<VirtualHost *:80>
+    ServerName 165.227.83.46
+    ServerAlias http://165.227.83.46/
+    ServerAdmin root@ubuntu1
+    WSGIDaemonProcess catalog python-path=/var/www/FlaskApp:/var/www/FlaskApp/FlaskApp/venv/lib/python2.7/site-packages
+    WSGIProcessGroup FlaskApp
+    WSGIScriptAlias / /var/www/FlaskApp/flaskapp.wsgi
+    <Directory /var/www/FlaskApp/FlaskApp/>
+        Order allow,deny
+        Allow from all
+    </Directory>
+    Alias /static /var/www/FlaskApp/FlaskApp/static
+    <Directory /var/www/FlaskApp/FlaskApp/static/>
+        Order allow,deny
+        Allow from all
+    </Directory>
+    ErrorLog ${APACHE_LOG_DIR}/error.log
+    LogLevel warn
+    CustomLog ${APACHE_LOG_DIR}/access.log combined
+</VirtualHost>
+```
