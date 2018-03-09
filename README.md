@@ -132,7 +132,7 @@ Install virtual environment, Flask and the project's dependencies
 
 `pip install httplib2 request oauth2client sqlalchemy python-psycopg2`
 
-`sudo nano /etc/apache2/sites-available/FlaskApp.conf`
+`sudo nano /etc/apache2/sites-available/flaskapp.conf`
 
 Insert the following cade:
 
@@ -165,3 +165,19 @@ Make necessary changes to python files
 engine = create_engine('postgresql://catalog:password@localhost/catalog')
 
 `sudo service apache2 restart`
+
+# References
+
+https://www.digitalocean.com/community/tutorials/how-to-create-a-sudo-user-on-ubuntu-quickstart
+
+http://idroot.net/tutorials/how-to-change-ssh-port-in-ubuntu/
+
+https://www.digitalocean.com/community/tutorials/how-to-deploy-a-flask-application-on-an-ubuntu-vps
+
+https://httpd.apache.org/docs/
+
+https://www.postgresql.org/docs/
+
+https://help.ubuntu.com/community/UbuntuTime
+
+
