@@ -1,11 +1,11 @@
 # Linux-Server-Configuration
 
 ## Server Details
-IP address: `165.227.83.46`
+IP address: `159.89.89.23`
 
 SSH port: `2200`
 
-URL: http://165.227.83.46/
+URL: http://159.89.89.23/
 
 ## Secure your server
 
@@ -138,8 +138,8 @@ Insert the following cade:
 
 ```
 <VirtualHost *:80>
-    ServerName 165.227.83.46
-    ServerAlias http://165.227.83.46/
+    ServerName 159.89.89.23
+    ServerAlias http://159.89.89.23/
     ServerAdmin root@ubuntu1
     WSGIDaemonProcess catalog python-path=/var/www/FlaskApp:/var/www/FlaskApp/FlaskApp/venv/lib/python2.7/site-packages
     WSGIProcessGroup FlaskApp
