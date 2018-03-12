@@ -112,9 +112,9 @@ Install git
 import sys
 import logging
 logging.basicConfig(stream=sys.stderr)
-sys.path.insert(0, "/var/www/FlaskApp/")
+sys.path.insert(0, "/var/www/catalog/")
 
-from FlaskApp import app as application
+from catalog import app as application
 ```
 Install virtual environment, Flask and the project's dependencies
 
