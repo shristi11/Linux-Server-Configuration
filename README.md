@@ -1,11 +1,11 @@
 # Linux-Server-Configuration
 
 ## Server Details
-IP address: `159.89.89.23`
+IP address: `67.205.170.48`
 
 SSH port: `2200`
 
-URL: http://159.89.89.23/
+URL: http://67.205.170.48/
 
 ## Secure your server
 
@@ -138,18 +138,18 @@ Insert the following cade:
 
 ```
 <VirtualHost *:80>
-    ServerName 159.89.89.23
-    ServerAlias http://159.89.89.23/
+    ServerName 67.205.170.48
+    ServerAlias http://67.205.170.48/
     ServerAdmin root@ubuntu1
-    WSGIDaemonProcess catalog python-path=/var/www/FlaskApp:/var/www/FlaskApp/FlaskApp/venv/lib/python2.7/site-packages
-    WSGIProcessGroup FlaskApp
-    WSGIScriptAlias / /var/www/FlaskApp/flaskapp.wsgi
-    <Directory /var/www/FlaskApp/FlaskApp/>
+    WSGIDaemonProcess catalog python-path=/var/www/FlaskApp:/var/www/catalog/venv/lib/python2.7/site-packages
+    WSGIProcessGroup catalog
+    WSGIScriptAlias / /var/www/catalog/catalog.wsgi
+    <Directory /var/www/catalog/catalog/>
         Order allow,deny
         Allow from all
     </Directory>
-    Alias /static /var/www/FlaskApp/FlaskApp/static
-    <Directory /var/www/FlaskApp/FlaskApp/static/>
+    Alias /static /var/www/catalog/catalog/static
+    <Directory /var/www/catalog/catalog/static/>
         Order allow,deny
         Allow from all
     </Directory>
