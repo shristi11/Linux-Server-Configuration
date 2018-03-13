@@ -47,9 +47,9 @@ Give grader the permission to sudo
 
 Create an SSH key pair for grader using the ssh-keygen tool
 
-`ssh-keygen`
+`ssh-keygen` Create keypair in local machine
 
-`cat .ssh/id_rsa.pub` then copy the ssh key
+`cat .ssh/id_rsa.pub` then copy the ssh key and paste in new file home/grader/.ssh/authorized_keys 
 
 ## Prepare to deploy your project
 
@@ -132,7 +132,7 @@ Install virtual environment, Flask and the project's dependencies
 
 `pip install httplib2 requests oauth2client sqlalchemy python-psycopg2`
 
-`sudo nano /etc/apache2/sites-available/flaskapp.conf`
+`sudo nano /etc/apache2/sites-available/catalog.conf`
 
 Insert the following cade:
 
