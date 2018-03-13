@@ -110,7 +110,7 @@ Install git
 ```python
 #!/usr/bin/python
 import sys
-import logging
+rimport logging
 logging.basicConfig(stream=sys.stderr)
 sys.path.insert(0, "/var/www/catalog/")
 
@@ -130,7 +130,7 @@ Install virtual environment, Flask and the project's dependencies
 
 `pip install Flask`
 
-`pip install httplib2 request oauth2client sqlalchemy python-psycopg2`
+`pip install httplib2 requests oauth2client sqlalchemy python-psycopg2`
 
 `sudo nano /etc/apache2/sites-available/flaskapp.conf`
 
