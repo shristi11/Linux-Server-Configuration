@@ -99,13 +99,13 @@ Install git
 
 `cd /var/www`
 
-`sudo mkdir FlaskApp`
+`sudo mkdir catalog`
 
-`cd /FlaskApp`
+`cd /catalog`
 
-`git clone https://github.com/shristi11/Catalog-Application FlaskApp `
+`git clone https://github.com/shristi11/Catalog-Application catalog `
 
-`sudo nano flaskapp.wsgi` Insert the following pythone code.
+`sudo nano catalog.wsgi` Insert the following pythone code.
 
 ```python
 #!/usr/bin/python
